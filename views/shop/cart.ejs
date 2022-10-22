@@ -9,15 +9,19 @@
                     <ul>
                         <% for(product of cartProducts){ %>
                             <li>
-                                <p><%= product.productData.title + '\tAdet: ' +product.qty%></p>
+                                <p><%= product.title + '\tAdet: ' +product.CartItem.quantity%></p>
                                 <form action="cart-delete-item" method="POST">
                                     <input type="submit" value="Delete Item">
-                                    <input type="hidden" name="id" value="<%= product.productData.id %>">
+                                    <input type="hidden" name="id" value="<%= product.id %>">
                                 </form>
+                                
                             </li>
                             <% } %>
                     </ul>
-                    <h2>Total Price <%= cart.totalPrice %>
+                    <form action="/create-order" method="POST">
+                        <input type="submit" value="Order Now!">
+                    </form>
+                    <h2>Total Price <%= %>
                     </h2>
                     <% }else{ %>
                         <h2>No Products in the cart</h2>

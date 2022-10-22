@@ -36,5 +36,6 @@ exports.router.get('/products/:productId', shopController.getProduct);
 exports.router.get('/cart', shopController.getCart);
 exports.router.post('/cart', shopController.postCart);
 exports.router.post('/cart-delete-item', shopController.postDeleteCartProduct);
+exports.router.post('/create-order', shopController.postOrders);
 exports.router.get('/orders', shopController.getOrders);
 exports.router.get('/checkout', shopController.getCheckout);

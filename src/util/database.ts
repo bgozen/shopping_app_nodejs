@@ -1,10 +1,4 @@
-import mysql2 from 'mysql2'
+import {Sequelize} from 'sequelize'
 require('dotenv').config()
 
-export const pool=mysql2.createPool({
-    host:'localhost',
-    user:'root',
-    database:'shopping',
-    password:process.env.SQLROOT
-
-}).promise()
+export const sequelize= new Sequelize('shopping','root','Gat64mec',{dialect:'mysql',host:'localhost',port:3307})
